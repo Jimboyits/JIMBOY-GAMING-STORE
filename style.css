@@ -1,0 +1,260 @@
+/* Global */
+body {
+  margin: 0;
+  font-family: 'Orbitron', sans-serif;
+  background: linear-gradient(135deg, #0c0c1c, #1a1a2e);
+  color: #ffffff;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #14142b;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  box-shadow: 0 2px 10px #ff0077;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ff0077;
+}
+
+nav a {
+  margin-left: 20px;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #ff0077;
+}
+
+/* Hero Section (Index) */
+.hero {
+  padding: 80px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+}
+
+.hero-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  max-width: 1200px;
+  gap: 40px;
+}
+
+.hero-content .text {
+  flex: 1 1 400px;
+}
+
+.hero-content h2 {
+  font-size: 36px;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.hero-content p {
+  font-size: 18px;
+  color: #cccccc;
+  margin-bottom: 30px;
+}
+
+.cta-button {
+  padding: 12px 30px;
+  background-color: #ff0077;
+  color: #ffffff;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #cc005f;
+}
+
+.hero-content .banner {
+  max-width: 500px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px #ff007766;
+}
+
+/* Produk Section */
+.produk-section {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.produk-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.produk-card {
+  background-color: #1e1e3f;
+  padding: 20px;
+  border-radius: 12px;
+  width: 280px;
+  box-shadow: 0 0 15px #ff007744;
+  transition: transform 0.3s;
+}
+
+.produk-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 25px #ff0077aa;
+}
+
+.produk-slider {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 10px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+}
+
+.produk-slider img {
+  flex: 0 0 100%;
+  max-width: 100%;
+  scroll-snap-align: center;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #ff007755;
+}
+
+.produk-card h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.produk-card p {
+  color: #ccc;
+  font-size: 16px;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #14142b;
+  margin-top: 60px;
+  box-shadow: 0 -2px 10px #ff0077;
+}
+.tentang-section {
+  padding: 60px 20px;
+  max-width: 800px;
+  margin: auto;
+  text-align: center;
+}
+
+.tentang-section h2 {
+  font-size: 32px;
+  color: #ff0077;
+  margin-bottom: 20px;
+}
+
+.tentang-section p {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #dddddd;
+  margin-bottom: 20px;
+}
+.tentang-section, .kontak-section {
+  padding: 60px 20px;
+  max-width: 800px;
+  margin: auto;
+  text-align: center;
+}
+
+.tentang-section h2, .kontak-section h2 {
+  font-size: 32px;
+  color: #ff0077;
+  margin-bottom: 20px;
+}
+
+.tentang-section p, .kontak-section p {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #dddddd;
+  margin-bottom: 20px;
+}
+
+.kontak-section ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.kontak-section li {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+/* Gaya untuk daftar keranjang */
+ul#cart-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#cart-list li {
+  background-color: #1e1e3f;
+  color: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 0 8px #00000044;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Gambar produk di keranjang */
+#cart-list img {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Tombol hapus per item */
+#cart-list button {
+  margin-left: auto;
+  background: #e74c3c;
+  color: #fff;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#cart-list button:hover {
+  background: #c0392b;
+}
+
+/* Total harga */
+#total-harga {
+  margin-top: 20px;
+  padding: 15px;
+  background: #292950;
+  color: #fff;
+  border-radius: 8px;
+  font-weight: bold;
+  text-align: center;
+}

@@ -1,0 +1,121 @@
+
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Keranjang Belanja - Jimboy Gaming Store</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    ul#cart-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    #cart-list li {
+      background-color: #1e1e3f;
+      color: #fff;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 0 8px #00000044;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    #cart-list img {
+      width: 70px;
+      height: 70px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+    #cart-list button {
+      margin-left: auto;
+      background: #e74c3c;
+      color: #fff;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    #cart-list button:hover {
+      background: #c0392b;
+    }
+    #total-harga {
+      margin-top: 20px;
+      padding: 15px;
+      background: #292950;
+      color: #fff;
+      border-radius: 8px;
+      font-weight: bold;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">Jimboy Gaming</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="produk.html">Produk</a>
+      <a href="tentang.html">Tentang</a>
+      <a href="kontak.html">Kontak</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="tentang-section">
+      <h2>Keranjang Belanja</h2>
+      <ul id="cart-list"></ul>
+      <p id="total-harga"></p>
+      <a href="produk.html" class="cta-button">Kembali ke Produk</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Jimboy Gaming Store</p>
+  </footer>
+
+  <script>
+    const cartList = document.getElementById('cart-list');
+    const totalHargaEl = document.getElementById('total-harga');
+    let cartData = JSON.parse(localStorage.getItem('cart')) || [];
+
+    function renderCart() {
+      cartList.innerHTML = '';
+      let total = 0;
+
+      if (cartData.length === 0) {
+        cartList.innerHTML = '<li>Keranjang masih kosong.</li>';
+        totalHargaEl.textContent = '';
+        return;
+      }
+
+      cartData.forEach((item, index) => {
+        const li = document.createElement('li');
+        li.innerHTML = `
+          <img src="${item.gambar}" alt="${item.nama}">
+          <div>
+            <strong>${item.nama}</strong><br>
+            Rp ${item.harga.toLocaleString()}
+          </div>
+          <button onclick="hapusItem(${index})">Hapus</button>
+        `;
+        cartList.appendChild(li);
+        total += item.harga;
+      });
+
+      totalHargaEl.textContent = `Total: Rp ${total.toLocaleString()}`;
+    }
+
+    function hapusItem(index) {
+      if (confirm("Hapus item ini dari keranjang?")) {
+        cartData.splice(index, 1);
+        localStorage.setItem('cart', JSON.stringify(cartData));
+        renderCart();
+      }
+    }
+
+    renderCart();
+  </script>
+</body>
+</html>

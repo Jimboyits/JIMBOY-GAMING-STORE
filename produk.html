@@ -1,0 +1,98 @@
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Produk - Jimboy Gaming Store</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">Jimboy Gaming</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="produk.html">Produk</a>
+      <a href="tentang.html">Tentang</a>
+      <a href="kontak.html">Kontak</a>
+      <a href="cart.html">Keranjang</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="produk-section">
+      <h2>Produk Kami</h2>
+      <div class="produk-grid">
+
+        
+        <div class="produk-card">
+          <a href="keyboard.html">
+            <div class="produk-slider">
+              <img src="img/keyboard.jpg.webp" alt="Keyboard Tampak Atas">
+              <img src="img/keyboard.jpg.2.webp" alt="Keyboard RGB Menyala">
+              <img src="img/keyboard.jpg.3.webp" alt="Keyboard Samping">
+            </div>
+          </a>
+          <h3>Mechanical Keyboard RGB</h3>
+          <p>Rp 350.000</p>
+          <button onclick="addToCart('Mechanical Keyboard RGB', 350000, 'img/keyboard.jpg.webp')" class="cta-button">Tambah ke Keranjang</button>
+        </div>
+
+       
+        <div class="produk-card">
+          <a href="headset.html">
+            <div class="produk-slider">
+              <img src="img/Headset Gaming Bass Boost1.webp" alt="Headset Tampak Depan">
+              <img src="img/Headset Gaming Bass Boost2.webp" alt="Headset Samping">
+              <img src="img/Headset Gaming Bass Boost3.webp" alt="Headset di Kepala">
+            </div>
+          </a>
+          <h3>Headset Gaming Bass Boost</h3>
+          <p>Rp 250.000</p>
+          <button onclick="addToCart('Headset Gaming Bass Boost', 250000, 'img/Headset Gaming Bass Boost1.webp')" class="cta-button">Tambah ke Keranjang</button>
+        </div>
+
+        
+        <div class="produk-card">
+          <a href="gamepad.html">
+            <div class="produk-slider">
+              <img src="img/gamepad1.webp" alt="Gamepad Depan">
+              <img src="img/gamepad2.webp" alt="Gamepad Tangan">
+              <img src="img/gamepad3.webp" alt="Gamepad Wireless">
+            </div>
+          </a>
+          <h3>Gamepad Wireless</h3>
+          <p>Rp 300.000</p>
+          <button onclick="addToCart('Gamepad Wireless', 300000, 'img/gamepad1.webp')" class="cta-button">Tambah ke Keranjang</button>
+        </div>
+
+        
+        <div class="produk-card">
+          <a href="mouse.html">
+            <div class="produk-slider">
+              <img src="img/mouse1.webp" alt="Mouse RGB">
+              <img src="img/mouse2.webp" alt="Mouse Gaming Grip">
+              <img src="img/mouse3.webp" alt="Mouse Side View">
+            </div>
+          </a>
+          <h3>Mouse Gaming RGB</h3>
+          <p>Rp 150.000</p>
+          <button onclick="addToCart('Mouse Gaming RGB', 150000, 'img/mouse1.webp')" class="cta-button">Tambah ke Keranjang</button>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Jimboy Gaming Store</p>
+  </footer>
+
+  <script>
+    function addToCart(nama, harga, gambar) {
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      cart.push({ nama, harga, gambar });
+      localStorage.setItem('cart', JSON.stringify(cart));
+      alert(`✅ ${nama} ditambahkan ke keranjang.`);
+    }
+  </script>
+</body>
+</html>
